@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Dark mode transitions */
+  * {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100 dark:bg-gray-800;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 dark:bg-gray-600 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400 dark:bg-gray-500;
+  }
+}
+
+@layer components {
+  .btn {
+    /* Standardized Height & Padding matching Dashboard button preference */
+    @apply inline-flex items-center justify-center rounded-xl text-sm font-bold tracking-wide transition-all duration-300;
+    @apply h-11 px-6 py-2.5;
+    /* Default premium size (approx 44px height) */
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2;
+    @apply disabled:opacity-50 disabled:pointer-events-none transform active:scale-[0.98];
+  }
+
+  /* Premium Primary Button */
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-blue-600 to-indigo-600 text-white;
+    @apply border border-blue-500/30 shadow-lg shadow-blue-500/25;
+    @apply dark:border-white/10 dark:shadow-blue-500/20;
+    @apply hover:from-blue-500 hover:to-indigo-500 hover:shadow-xl hover:shadow-blue-500/40 hover:-translate-y-0.5;
+  }
+
+  /* Premium Secondary Button */
+  .btn-secondary {
+    @apply btn bg-white text-gray-700 border border-gray-200;
+    @apply shadow-sm hover:bg-gray-50 hover:text-gray-900 hover:border-gray-300 hover:shadow-md;
+    @apply dark:bg-white/10 dark:text-gray-100 dark:border-white/10 dark:backdrop-blur-md;
+    @apply dark:hover:bg-white/20 dark:hover:border-white/30;
+  }
+
+  .btn-danger {
+    @apply btn bg-gradient-to-r from-red-600 to-pink-600 text-white;
+    @apply shadow-lg shadow-red-500/30 border border-red-500/30;
+    @apply hover:from-red-500 hover:to-pink-500 hover:shadow-red-500/50 hover:-translate-y-0.5;
+  }
+
+  /* Small button variant for tight spaces */
+  .btn-sm {
+    @apply h-9 px-4 py-2 text-xs;
+  }
+
+  /* Large button variant for hero sections */
+  .btn-lg {
+    @apply h-14 px-8 py-4 text-base;
+  }
+
+  .card {
+    @apply rounded-xl border bg-white/80 backdrop-blur-md text-gray-950 shadow-sm transition-all duration-300;
+    @apply dark:bg-gray-900/60 dark:text-gray-100 dark:border-white/10 dark:shadow-black/40;
+    @apply hover:shadow-lg hover:shadow-gray-200/50 dark:hover:shadow-black/60 dark:hover:border-white/20;
+  }
+
+  .glass-panel {
+    @apply bg-white/70 dark:bg-gray-900/60 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-xl;
+  }
+
+  .input {
+    @apply flex h-11 w-full rounded-xl border bg-white/50 backdrop-blur-sm px-4 py-2 text-sm transition-all duration-200;
+    @apply file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-gray-500;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2;
+    @apply disabled:cursor-not-allowed disabled:opacity-50;
+    @apply dark:bg-gray-800/50 dark:border-gray-700 dark:text-gray-100 dark:placeholder:text-gray-400 dark:focus-visible:ring-blue-400;
+    @apply hover:bg-white dark:hover:bg-gray-800 group-hover:bg-white dark:group-hover:bg-gray-800;
+    @apply shadow-sm focus:shadow-md;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  .fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  .skeleton {
+    @apply animate-pulse bg-gray-200 dark:bg-gray-700 rounded;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
