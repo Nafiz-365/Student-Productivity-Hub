@@ -21,7 +21,6 @@ const NotificationCenter: React.FC = () => {
   useEffect(() => {
     const checkNotifications = () => {
       const now = new Date();
-      const today = now.toDateString();
       const tomorrow = new Date(now.getTime() + 24 * 60 * 60 * 1000).toDateString();
 
       const newNotifications: Notification[] = [];

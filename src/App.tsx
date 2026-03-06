@@ -12,6 +12,7 @@ import Analytics from './pages/Analytics';
 import Profile from './pages/Profile';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import Admin from './pages/Admin';
 import './index.css';
 
 // Component to conditionally wrap routes with Layout
@@ -49,6 +50,7 @@ function App() {
               <Route path="/timer" element={<Timer />} />
               <Route path="/analytics" element={<Analytics />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="/admin" element={<Admin />} />
               <Route path="/" element={<Navigate to="/dashboard" replace />} />
             </Routes>
           </AppLayoutWrapper>

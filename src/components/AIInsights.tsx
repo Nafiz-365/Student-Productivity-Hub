@@ -162,7 +162,6 @@ const AIInsights: React.FC = () => {
       }
 
       // Productivity predictions
-      const weeklyProductivity = [];
       const last4Weeks = [];
 
       for (let i = 3; i >= 0; i--) {
@@ -267,14 +266,6 @@ const AIInsights: React.FC = () => {
       case 'warning': return <Target className="w-5 h-5 text-red-500" />;
       case 'recommendation': return <Zap className="w-5 h-5 text-purple-500" />;
       default: return <Star className="w-5 h-5 text-gray-500" />;
-    }
-  };
-
-  const getPriorityBadge = (priority: string) => {
-    switch (priority) {
-      case 'high': return 'bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs font-semibold';
-      case 'medium': return 'bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs font-semibold';
-      default: return 'bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-semibold';
     }
   };
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 import {
@@ -7,7 +7,6 @@ import {
   Clock,
   MapPin,
   Edit2,
-  Trash2,
   X,
   ChevronLeft,
   ChevronRight,
@@ -24,7 +23,7 @@ interface ScheduleFormData {
 }
 
 const Schedule: React.FC = () => {
-  const { user, classSchedule, addClassSchedule, updateClassSchedule, deleteClassSchedule, darkMode } = useApp();
+  const { user, classSchedule, addClassSchedule, updateClassSchedule } = useApp();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingClass, setEditingClass] = useState<string | null>(null);
   const [currentWeek, setCurrentWeek] = useState(new Date());
@@ -357,8 +356,8 @@ const Schedule: React.FC = () => {
                             <div
                               key={cls.id}
                               className={`absolute inset-x-1 top-1 z-10 p-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:scale-[1.02] border group ${currentClass
-                                  ? 'bg-gradient-to-br from-orange-100 to-amber-100 dark:from-orange-900/40 dark:to-amber-900/40 border-orange-200 dark:border-orange-700'
-                                  : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 shadow-sm'
+                                ? 'bg-gradient-to-br from-orange-100 to-amber-100 dark:from-orange-900/40 dark:to-amber-900/40 border-orange-200 dark:border-orange-700'
+                                : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 shadow-sm'
                                 }`}
                               style={{ height: `${duration * 60 - 8}px` }}
                               onClick={() => openModal(cls)}
@@ -417,8 +416,8 @@ const Schedule: React.FC = () => {
                 <div
                   key={cls.id}
                   className={`p-4 rounded-xl border cursor-pointer transition-all hover:shadow-md ${isCurrent
-                      ? 'bg-orange-50 dark:bg-orange-900/20 border-orange-200 dark:border-orange-800'
-                      : 'bg-white dark:bg-gray-800 border-gray-100 dark:border-gray-700'
+                    ? 'bg-orange-50 dark:bg-orange-900/20 border-orange-200 dark:border-orange-800'
+                    : 'bg-white dark:bg-gray-800 border-gray-100 dark:border-gray-700'
                     }`}
                   onClick={() => openModal(cls)}
                 >
@@ -521,8 +520,8 @@ const Schedule: React.FC = () => {
                       type="button"
                       onClick={() => setFormData({ ...formData, dayOfWeek: day.value })}
                       className={`p-2 rounded-lg text-sm font-medium transition-colors ${formData.dayOfWeek === day.value
-                          ? 'bg-blue-600 text-white shadow-md'
-                          : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700'
+                        ? 'bg-blue-600 text-white shadow-md'
+                        : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700'
                         }`}
                     >
                       {day.short}

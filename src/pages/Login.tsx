@@ -83,6 +83,8 @@ const Login: React.FC = () => {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    autoComplete="email"
+                    name="email"
                     className="input pl-9 w-full h-10 text-sm transition-all focus:ring-2 focus:ring-blue-500/20"
                     placeholder="Enter your email"
                   />
@@ -94,7 +96,7 @@ const Login: React.FC = () => {
                   <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300">
                     Password
                   </label>
-                  <a href="#" className="text-xs font-medium text-blue-600 hover:text-blue-500">Forgot password?</a>
+                  <button type="button" className="text-xs font-medium text-blue-600 hover:text-blue-500">Forgot password?</button>
                 </div>
 
                 <div className="relative group">
@@ -106,6 +108,8 @@ const Login: React.FC = () => {
                     required
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
+                    autoComplete="current-password"
+                    name="password"
                     className="input pl-9 pr-8 w-full h-10 text-sm transition-all focus:ring-2 focus:ring-blue-500/20"
                     placeholder="Enter your password"
                   />
@@ -127,7 +131,7 @@ const Login: React.FC = () => {
                 className="h-3.5 w-3.5 text-blue-600 focus:ring-blue-500 border-gray-300 rounded cursor-pointer"
               />
               <label htmlFor="remember-me" className="ml-2 block text-xs text-gray-600 dark:text-gray-400 cursor-pointer">
-                Remember be for 30 days
+                Remember me for 30 days
               </label>
             </div>
 

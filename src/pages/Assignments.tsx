@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 import {
@@ -14,9 +14,7 @@ import {
   X,
   Check,
   Award,
-  TrendingUp,
-  MoreVertical,
-  ArrowUpRight
+  TrendingUp
 } from 'lucide-react';
 
 interface AssignmentFormData {
@@ -29,7 +27,7 @@ interface AssignmentFormData {
 }
 
 const Assignments: React.FC = () => {
-  const { user, assignments, addAssignment, updateAssignment, deleteAssignment, darkMode } = useApp();
+  const { user, assignments, addAssignment, updateAssignment, deleteAssignment } = useApp();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingAssignment, setEditingAssignment] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
@@ -321,8 +319,8 @@ const Assignments: React.FC = () => {
               <div
                 key={assignment.id}
                 className={`group card p-5 flex flex-col md:flex-row items-start gap-5 transition-all duration-300 hover:shadow-lg hover:scale-[1.01] border-l-4 ${assignment.status === 'completed' ? 'border-l-green-500 opacity-80' :
-                    assignment.status === 'in-progress' ? 'border-l-blue-500' :
-                      isOverdue ? 'border-l-red-500' : 'border-l-amber-500'
+                  assignment.status === 'in-progress' ? 'border-l-blue-500' :
+                    isOverdue ? 'border-l-red-500' : 'border-l-amber-500'
                   }`}
               >
                 <div className="flex-1 min-w-0 w-full">

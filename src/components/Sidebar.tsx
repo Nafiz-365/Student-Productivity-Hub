@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink, useNavigate, useLocation } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 import {
     Home,
@@ -18,10 +18,9 @@ import {
 } from 'lucide-react';
 
 const Sidebar: React.FC = () => {
-    const { user, logout, darkMode, toggleDarkMode } = useApp();
+    const { logout, darkMode, toggleDarkMode } = useApp();
     const [isMobileOpen, setIsMobileOpen] = useState(false);
     const navigate = useNavigate();
-    const location = useLocation();
 
     const navItems = [
         { path: '/dashboard', label: 'Dashboard', icon: Home },

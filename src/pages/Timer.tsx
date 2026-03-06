@@ -7,13 +7,11 @@ import {
   Pause,
   RotateCcw,
   Settings,
-  Clock,
   Target,
   TrendingUp,
   Coffee,
   Brain,
-  X,
-  Volume2
+  X
 } from 'lucide-react';
 
 interface TimerSettings {
@@ -21,14 +19,6 @@ interface TimerSettings {
   breakDuration: number;
   longBreakDuration: number;
   sessionsUntilLongBreak: number;
-}
-
-interface SessionLog {
-  duration: number;
-  subject: string;
-  notes: string;
-  completedAt: string;
-  type: 'work' | 'break' | 'long-break';
 }
 
 const TimerPage: React.FC = () => {
@@ -40,7 +30,6 @@ const TimerPage: React.FC = () => {
   const [sessionCount, setSessionCount] = useState(0);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [isSessionComplete, setIsSessionComplete] = useState(false);
-  const [showSessionLog, setShowSessionLog] = useState(false);
   const [sessionNote, setSessionNote] = useState('');
   const [sessionSubject, setSessionSubject] = useState('');
 
@@ -79,6 +68,7 @@ const TimerPage: React.FC = () => {
     }
 
     return () => clearInterval(interval);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isRunning, isPaused, timeLeft]);
 
   const handleSessionComplete = () => {

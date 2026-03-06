@@ -6,7 +6,7 @@ interface QuickShortcutsProps {
 }
 
 const QuickShortcuts: React.FC<QuickShortcutsProps> = ({ children }) => {
-  const { darkMode, toggleDarkMode } = useApp();
+  const { toggleDarkMode } = useApp();
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -15,14 +15,14 @@ const QuickShortcuts: React.FC<QuickShortcutsProps> = ({ children }) => {
         event.preventDefault();
         toggleDarkMode();
       }
-      
+
       // Ctrl/Cmd + K for quick search (can be expanded)
       if ((event.ctrlKey || event.metaKey) && event.key === 'k') {
         event.preventDefault();
         // Future: Could open a global search modal
         console.log('Quick search activated');
       }
-      
+
       // Escape to close any open modals
       if (event.key === 'Escape') {
         const modals = document.querySelectorAll('[role="dialog"]');

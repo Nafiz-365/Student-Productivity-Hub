@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Search, Clock, Calendar, Target, TrendingUp, X } from 'lucide-react';
+import { Search, Clock, Calendar, Target, X } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 
 interface QuickSearchProps {

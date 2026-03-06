@@ -215,7 +215,7 @@ const Signup: React.FC = () => {
                 className="mt-0.5 h-3.5 w-3.5 text-teal-600 focus:ring-teal-500 border-gray-300 rounded cursor-pointer"
               />
               <label htmlFor="agree-terms" className="ml-2 block text-xs text-gray-600 dark:text-gray-400">
-                I agree to the <a href="#" className="font-semibold text-teal-600 hover:text-teal-500">Terms</a> and <a href="#" className="font-semibold text-teal-600 hover:text-teal-500">Privacy Policy</a>
+                I agree to the <button type="button" className="font-semibold text-teal-600 hover:text-teal-500">Terms</button> and <button type="button" className="font-semibold text-teal-600 hover:text-teal-500">Privacy Policy</button>
               </label>
             </div>
 

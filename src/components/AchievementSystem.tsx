@@ -10,7 +10,7 @@ const AchievementSystem: React.FC = () => {
   useEffect(() => {
     const checkAchievements = () => {
       const newAchievements = [];
-      
+
       // Task achievements
       const completedTasks = tasks.filter(t => t.status === 'completed').length;
       if (completedTasks >= 1) {
@@ -92,11 +92,11 @@ const AchievementSystem: React.FC = () => {
 
       // Streak achievements
       const today = new Date().toDateString();
-      const todayTasks = tasks.filter(t => 
-        t.status === 'completed' && 
+      const todayTasks = tasks.filter(t =>
+        t.status === 'completed' &&
         new Date(t.createdAt).toDateString() === today
       ).length;
-      
+
       if (todayTasks >= 5) {
         newAchievements.push({
           id: 'productive-day',
@@ -110,7 +110,7 @@ const AchievementSystem: React.FC = () => {
 
       // Check for new achievements
       const existingIds = achievements.map(a => a.id);
-      const newUnlocked = newAchievements.filter(a => 
+      const newUnlocked = newAchievements.filter(a =>
         a.unlocked && !existingIds.includes(a.id)
       );
 
@@ -123,6 +123,7 @@ const AchievementSystem: React.FC = () => {
     };
 
     checkAchievements();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tasks, assignments, studySessions]);
 
   const allAchievements = [
@@ -192,11 +193,11 @@ const AchievementSystem: React.FC = () => {
     }
   ];
 
-  const unlockedAchievements = allAchievements.filter(a => 
+  const unlockedAchievements = allAchievements.filter(a =>
     achievements.find(ua => ua.id === a.id)?.unlocked
   );
 
-  const lockedAchievements = allAchievements.filter(a => 
+  const lockedAchievements = allAchievements.filter(a =>
     !achievements.find(ua => ua.id === a.id)?.unlocked
   );
 
@@ -232,9 +233,9 @@ const AchievementSystem: React.FC = () => {
               </span>
             </div>
           </div>
-          
+
           <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-            <div 
+            <div
               className="bg-gradient-to-r from-yellow-400 to-yellow-600 h-2 rounded-full transition-all duration-500"
               style={{ width: `${(unlockedAchievements.length / allAchievements.length) * 100}%` }}
             />

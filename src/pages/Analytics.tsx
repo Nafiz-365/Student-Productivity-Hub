@@ -7,11 +7,8 @@ import {
   Clock,
   Target,
   Award,
-  BookOpen,
   CheckSquare,
-  Brain,
-  Filter,
-  Calendar
+  Brain
 } from 'lucide-react';
 import {
   Chart as ChartJS,
@@ -24,6 +21,7 @@ import {
   Tooltip,
   Legend,
   ArcElement,
+  Filler,
 } from 'chart.js';
 import { Line, Doughnut } from 'react-chartjs-2';
 
@@ -36,7 +34,8 @@ ChartJS.register(
   Title,
   Tooltip,
   Legend,
-  ArcElement
+  ArcElement,
+  Filler
 );
 
 const Analytics: React.FC = () => {

@@ -6,18 +6,14 @@ import {
   Plus,
   Calendar,
   Clock,
-  AlertCircle,
-  Edit2,
-  Trash2,
   Filter,
   CheckCircle2,
-  Circle,
   MoreVertical,
   X
 } from 'lucide-react';
 
 const Tasks: React.FC = () => {
-  const { user, tasks, addTask, updateTask, deleteTask } = useApp();
+  const { user, tasks, addTask, updateTask } = useApp();
   const [filter, setFilter] = useState<'all' | 'pending' | 'completed'>('all');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [newTaskTitle, setNewTaskTitle] = useState('');

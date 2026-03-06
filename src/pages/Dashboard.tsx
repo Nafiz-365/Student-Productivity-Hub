@@ -5,9 +5,7 @@ import {
   CheckSquare,
   BookOpen,
   Clock,
-  TrendingUp,
   Calendar,
-  AlertCircle,
   Plus,
   ArrowRight,
   Zap,
@@ -40,7 +38,7 @@ interface UpcomingAssignment {
 }
 
 const Dashboard: React.FC = () => {
-  const { user, tasks, assignments, classSchedule, darkMode } = useApp();
+  const { user, tasks, assignments, classSchedule } = useApp();
   const [stats, setStats] = useState<StatCard[]>([]);
   const [todayTasks, setTodayTasks] = useState<TodayTask[]>([]);
   const [upcomingAssignments, setUpcomingAssignments] = useState<UpcomingAssignment[]>([]);

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Zap, Activity, Code, Database, Globe, Users, Star } from 'lucide-react';
+import { Zap, Activity, Code, Database, Globe, Star } from 'lucide-react';
 
 interface SystemMetricsProps {
   children: React.ReactNode;
@@ -13,7 +13,7 @@ const SystemMetrics: React.FC<SystemMetricsProps> = ({ children }) => {
       // Performance metrics
       const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
       const loadTime = navigation ? navigation.loadEventEnd - navigation.loadEventStart : 0;
-      
+
       // Memory usage
       const memoryInfo = (performance as any).memory;
       const usedMemory = memoryInfo ? (memoryInfo.usedJSHeapSize / 1048576).toFixed(2) : 'N/A';
@@ -21,7 +21,7 @@ const SystemMetrics: React.FC<SystemMetricsProps> = ({ children }) => {
 
       // Network information
       const connection = (navigator as any).connection || {};
-      
+
       // Browser info
       const browserInfo = {
         userAgent: navigator.userAgent,
@@ -86,15 +86,6 @@ const SystemMetrics: React.FC<SystemMetricsProps> = ({ children }) => {
       </div>
     );
   }
-
-  const getMetricColor = (value: string, type: string) => {
-    if (type === 'performance') {
-      if (value.includes('Good') || value.includes('Optimized')) return 'text-green-600';
-      if (value.includes('Fair')) return 'text-yellow-600';
-      return 'text-gray-600';
-    }
-    return 'text-gray-600';
-  };
 
   const getSpeedIcon = (speed: string) => {
     if (speed.includes('4g') || speed.includes('fast')) return '🚀';
@@ -172,7 +163,7 @@ const SystemMetrics: React.FC<SystemMetricsProps> = ({ children }) => {
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
             Application Architecture
           </h3>
-          
+
           <div className="grid grid-cols-2 gap-4">
             <div className="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
               <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">React Components</p>
@@ -198,7 +189,7 @@ const SystemMetrics: React.FC<SystemMetricsProps> = ({ children }) => {
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
             Network & Connection
           </h3>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="text-center p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
               <div className="text-2xl mb-1">{getSpeedIcon(metrics.network.effectiveType)}</div>
@@ -243,7 +234,7 @@ const SystemMetrics: React.FC<SystemMetricsProps> = ({ children }) => {
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
             Technical Implementation
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
               <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Framework</p>
