@@ -1,47 +1,47 @@
 {
-  "name": "Student Productivity Hub",
-  "short_name": "StudyHub",
-  "description": "A modern web application designed to help students manage their daily academic life efficiently",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#3b82f6",
-  "theme_color": "#3b82f6",
-  "orientation": "portrait-primary",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "192x192",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "logo512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ],
-  "categories": ["education", "productivity"],
-  "lang": "en",
-  "scope": "/",
-  "prefer_related_applications": false,
-  "shortcuts": [
-    {
-      "name": "Add Task",
-      "short_name": "Task",
-      "description": "Quickly add a new task",
-      "url": "/tasks",
-      "icons": [{ "src": "favicon.ico", "sizes": "96x96" }]
-    },
-    {
-      "name": "Start Timer",
-      "short_name": "Timer",
-      "description": "Start a Pomodoro session",
-      "url": "/timer",
-      "icons": [{ "src": "favicon.ico", "sizes": "96x96" }]
-    }
-  ]
+    "name": "Student Productivity Hub",
+    "short_name": "StudyHub",
+    "description": "A modern web application designed to help students manage their daily academic life efficiently",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#3b82f6",
+    "theme_color": "#3b82f6",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "favicon.ico",
+            "sizes": "192x192",
+            "type": "image/x-icon"
+        },
+        {
+            "src": "logo192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "logo512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "categories": ["education", "productivity"],
+    "lang": "en",
+    "scope": "/",
+    "prefer_related_applications": false,
+    "shortcuts": [
+        {
+            "name": "Add Task",
+            "short_name": "Task",
+            "description": "Quickly add a new task",
+            "url": "/tasks",
+            "icons": [{ "src": "favicon.ico", "sizes": "96x96" }]
+        },
+        {
+            "name": "Start Timer",
+            "short_name": "Timer",
+            "description": "Start a Pomodoro session",
+            "url": "/timer",
+            "icons": [{ "src": "favicon.ico", "sizes": "96x96" }]
+        }
+    ]
 }

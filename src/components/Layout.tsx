@@ -46,8 +46,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <main className="flex-1 flex flex-col min-w-0 h-full relative">
                 {/* Scroll-aware Header Wrapper */}
                 <div
-                    className={`fixed top-16 lg:top-0 right-0 left-0 lg:left-72 z-30 transition-transform duration-300 ease-in-out ${showHeader ? 'translate-y-0' : '-translate-y-full'
-                        }`}
+                    className={`fixed top-16 lg:top-0 right-0 left-0 lg:left-72 z-30 transition-transform duration-300 ease-in-out ${
+                        showHeader ? 'translate-y-0' : '-translate-y-full'
+                    }`}
                 >
                     <Header />
                 </div>
